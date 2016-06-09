@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+	<body><font face="verdana">
+	<a href="/"><img src="static/ladybug.png"/></a><br/>
+{{range .Parts}}{{.Name}}
+	<form action="newBug" method="post">
+	<input type="text" name="subject" size="80"/>
+	<input type="submit" value="Add Issue"/>
+	<input type="hidden" value="{{.Id}}" name="partId"/>
+	</form><br/>
+	<div id="table">
+	{{range .Bugs}}
+		<div id="row">
+		<div id="cell">&#35;{{.Id}}</div>
+		<div id="cell">{{if .Last}}
+		{{if eq .Last.Status 0}}Open{{end}}
+		{{if eq .Last.Status 1}}Fixed{{end}}
+		{{if eq .Last.Status 2}}Closed{{end}}
+		{{end}}</div>
+		<div id="cell">{{if .Last}}{{.Last.Who}}{{end}}</div>
+		<div id="cell"><a href="bug?id={{.Id}}">{{.Subject}}</a><br/></div>
+		</div>
+	{{end}}
+	</div>
+{{end}}
+	</font></body>
+</html>
+

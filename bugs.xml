@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<db>
+	<nextId>8</nextId>
+	<user>
+		<name>User 1</name>
+		<address>user1@nthn.com</address>
+	</user>
+	<user>
+		<name>User 2</name>
+		<address>user2@nthn.com</address>
+	</user>
+	<part>
+		<name>Component 1</name>
+		<id>1</id>
+		<bug>
+			<id>1</id>
+			<subject>Subject 1</subject>
+			<change>
+				<when>2016-06-07T16:50:47.3544337-03:00</when>
+				<who>User 1</who>
+				<status>0</status>
+				<comment>Change 1 Comment</comment>
+			</change>
+			<change>
+				<when>2016-06-07T16:50:47.3544337-03:00</when>
+				<who>User 2</who>
+				<status>0</status>
+				<comment>Change 2 Comment</comment>
+			</change>
+			<change>
+				<when>2016-06-08T08:55:29.1564707-03:00</when>
+				<who>User 1</who>
+				<status>1</status>
+				<comment>Corrigido</comment>
+			</change>
+			<change>
+				<when>2016-06-08T09:02:21.8358001-03:00</when>
+				<who>User 2</who>
+				<status>0</status>
+				<comment>Reopen</comment>
+			</change>
+		</bug>
+		<bug>
+			<id>2</id>
+			<subject>Subject 20</subject>
+			<change>
+				<when>2016-06-07T16:50:47.3544337-03:00</when>
+				<who>User 1</who>
+				<status>0</status>
+				<comment>Change 1 Comment</comment>
+			</change>
+			<change>
+				<when>2016-06-07T16:50:47.3544337-03:00</when>
+				<who>User 2</who>
+				<status>0</status>
+				<comment>Change 2 Comment</comment>
+			</change>
+			<change>
+				<when>2016-06-08T07:30:43.2370811-03:00</when>
+				<who>User 1</who>
+				<status>0</status>
+				<comment></comment>
+			</change>
+			<change>
+				<when>2016-06-08T08:43:23.8757013-03:00</when>
+				<who>User 1</who>
+				<status>1</status>
+				<comment>Fixed</comment>
+			</change>
+		</bug>
+		<bug>
+			<id>3</id>
+			<subject>Assunto 3</subject>
+			<change>
+				<when>2016-06-07T17:02:32.5429411-03:00</when>
+				<who>User 1</who>
+				<status>0</status>
+				<comment>Aconteceu isso e isso.</comment>
+			</change>
+			<change>
+				<when>2016-06-07T17:02:39.407795-03:00</when>
+				<who>User 1</who>
+				<status>0</status>
+				<comment>Isso também.</comment>
+			</change>
+			<change>
+				<when>2016-06-08T08:42:08.4057991-03:00</when>
+				<who>User 1</who>
+				<status>2</status>
+				<comment>Fechou</comment>
+			</change>
+		</bug>
+		<bug>
+			<id>4</id>
+			<subject>lrlchrch</subject>
+			<change>
+				<when>2016-06-08T09:40:03.1880721-03:00</when>
+				<who>User 1</who>
+				<status>0</status>
+				<comment>Não deu certo.</comment>
+			</change>
+			<change>
+				<when>2016-06-08T09:44:57.0480315-03:00</when>
+				<who>User 1</who>
+				<status>1</status>
+				<comment></comment>
+			</change>
+			<change>
+				<when>2016-06-08T09:45:10.8872441-03:00</when>
+				<who>User 1</who>
+				<status>2</status>
+				<comment></comment>
+			</change>
+		</bug>
+		<bug>
+			<id>5</id>
+			<subject>lrlchrch</subject>
+		</bug>
+		<bug>
+			<id>6</id>
+			<subject>outro</subject>
+			<change>
+				<when>2016-06-08T09:44:37.5200889-03:00</when>
+				<who>User 2</who>
+				<status>0</status>
+				<comment>Mudei o status</comment>
+			</change>
+		</bug>
+		<bug>
+			<id>7</id>
+			<subject>será o sétimo?</subject>
+			<change>
+				<when>2016-06-09T09:17:57.0383063-03:00</when>
+				<who>User 1</who>
+				<status>0</status>
+				<comment>lalala</comment>
+			</change>
+			<change>
+				<when>2016-06-09T09:18:13.7494481-03:00</when>
+				<who>User 2</who>
+				<status>1</status>
+				<comment>mais um</comment>
+			</change>
+		</bug>
+	</part>
+</db>

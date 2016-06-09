@@ -1,0 +1,13 @@
+#table {
+	display: table;
+	border-spacing: 10px;
+}
+
+#row  {
+	display: table-row;
+}
+
+#cell {
+	display: table-cell;
+}
+
