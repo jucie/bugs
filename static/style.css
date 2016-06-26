@@ -1,13 +1,182 @@
-#table {
-	display: table;
-	border-spacing: 10px;
+/*
+These files are constructed having in mind the Mobile-first method.
+Values with @ in the comments means that the values are interconnected.
+Each section of the page will be signed, for example: Navbar, Issues table, etc.
+*/
+
+/*CSS Reset*/
+	* {box-sizing: border-box; margin: 0; padding: 0;}
+	button {border:none; background-color: transparent; cursor: pointer;}
+	a {text-decoration: none;}
+
+/*General settings*/
+	body {
+		background-color: #f3f3f3;
+		font-family: Verdana, Geneva, sans-serif;
+		min-width: 320px;
+	}
+
+/*Container*/
+	.container {
+		height: 100%;
+		padding: 0px 10px;
+		position: relative;
+		margin: 0 auto;
+		max-width: 900px; /* @container-height */
+	}
+
+/*Default block, this is the block holding the main informations*/
+	.default-block {
+		background-color: #fff;		
+		border: 1px solid #afd2ca; /* @default-block-border */
+		border-top-width: 4px;
+	}
+
+
+/*Navbar*/
+	.navbar {
+		background-color: #378f7c;
+		border-bottom: 1px solid #225449;
+		box-shadow: 0px 0px 4px 0px #000;
+		margin-bottom: 10px;
+		height: 60px;  /* @navbar-height */
+		padding: 5px 0px;
+		text-align: center;
+		width: 100%;
+	}
+
+	.navbar a {
+		color: white;
+	}
+
+	.nav-logo {
+		height: 100%;
+	}
+
+	.title-link {
+		display: none;
+		font-weight: bold;
+		line-height: 60px; /* @navbar-height */
+	}
+
+/*Add Issue*/
+	.add-issue {
+		padding: 5px 10px;
+		text-align: center;
+		font-size: 15px;
+		margin: 0 auto;
+		margin-bottom: 10px;
+		max-width: 900px; /* @container-height */
+		padding: 10px 0;
+	}
+
+	.add-issue > .add-issue-form {
+		margin: 6px 0;
+		display: inline; /*-----------------------------------------*/
+	}
+
+	.add-issue-form > .add-issue-name {
+		line-height: 20px;
+		margin: 5px 0px;
+		padding-left: 3px;
+		width: 80%;
+		border: 1px solid #afd2ca; /* @default-block-border */
+	}
+
+	.add-issue-form > .add-issue-submit {
+		background-color: #378f7c;
+		border: 1px solid #afd2ca; /* @default-block-border */
+		border-radius: 3px;
+		color: #fff;
+		padding: 5px;
+	}
+
+/*Issues Table*/
+	.issue-table {
+		font-size: 11px;
+		border-collapse: collapse;
+		margin: 0 auto;
+		max-width: 900px; /* @container-height */
+		width: 100%;
+	}
+
+	.issue-table tr {
+		border-bottom: 1px solid #afd2ca;
+	}
+
+	.issue-table td {
+		padding: 10px 4px;
+	}
+
+	.issue-table a:link {color:#000;}
+	.issue-table a:visited {color:#000;}
+	.issue-table a:hover {color:#000;}
+	.issue-table a:active {color:#888;}
+
+	/*Issue number column*/
+		.issue-table td:first-child {
+			font-weight: bold;		
+			max-width: 33px;
+		}
+
+	/*Issue state badge*/
+		.issue-table td:nth-child(2) {
+			font-weight: bold;		
+			max-width: 40px;
+		}
+
+		span[class^="badge"] {
+			border-radius: 10px;
+			color: white;
+			font-weight: bold;
+			padding: 4px;
+		}
+
+		.badge-open {background-color: #207de5;}
+		.badge-fixed {background-color: #6cc644;}
+		.badge-closed {background-color: #fd2a2a;}
+
+	/*Issue username */
+		.issue-table td:nth-child(3) {
+			text-align: center;
+		}
+
+	/*Issue name/link*/
+		.issue-table td:nth-child(4) {
+			font-weight: bold;
+			text-align: center;		
+    	overflow: hidden;
+    	max-width: 100px;
+		}
+
+/*Issue form - bug.template*/
+
+.issue-form {
+
 }
 
-#row  {
-	display: table-row;
-}
 
-#cell {
-	display: table-cell;
-}
 
+
+@media screen and (min-width: 768px) {
+	.navbar {
+		padding: 0;
+	}
+
+  .nav-logo {
+  	height: 80%;
+  	left: 6px;
+  	top: 6px;
+  	position: absolute;
+  }
+
+  .title-link {
+  	display: inline;
+  }
+}
+ 
+@media screen and (min-width: 992px) {
+}
+ 
+@media screen and (min-width: 1200px) {
+}
