@@ -24,7 +24,7 @@
 			{{range .Parts}}{{.Name}}
 			<form class="add-issue-form" action="newBug" method="post">
 				<input class="add-issue-name" type="text" name="subject" placeholder="Insert here a new issue...">
-				<button class="add-issue-submit" type="submit">Add Issue</button>
+				<button class="btn-submit" type="submit">Add Issue</button>
 				<input type="hidden" value="{{.Id}}" name="partId">
 			</form>
 		</div>

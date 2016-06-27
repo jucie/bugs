@@ -23,90 +23,38 @@
 
 		<div class="default-block">
 			<form class="issue-form" action="change" method="post">
-				<div id="table">
-					<label>
-						Issue &#35;{{.Bug.Id}}&nbsp;&nbsp;						
-						<input type="text" name="subject" size="80" value="{{.Bug.Subject}}"/>
-					</label>
-						
-					<label>
-						Status:
-						<select name="status">
-							<option value="0" {{if .Bug.Last}}{{if eq .Bug.Last.Status 0}}selected{{end}}{{end}}>Open</option>
-							<option value="1" {{if .Bug.Last}}{{if eq .Bug.Last.Status 1}}selected{{end}}{{end}}>Fixed</option>
-							<option value="2" {{if .Bug.Last}}{{if eq .Bug.Last.Status 2}}selected{{end}}{{end}}>Closed</option>
-						</select>
-					</label>
+				<label class="label-name">
+					Issue &#35;{{.Bug.Id}}&nbsp;&nbsp;						
+					<input type="text" name="subject" value="{{.Bug.Subject}}"/>
+				</label>
+					
+				<label class="label-status">
+					Status:
+					<select class="select-options" name="status">
+						<option value="0" {{if .Bug.Last}}{{if eq .Bug.Last.Status 0}}selected{{end}}{{end}}>Open</option>
+						<option value="1" {{if .Bug.Last}}{{if eq .Bug.Last.Status 1}}selected{{end}}{{end}}>Fixed</option>
+						<option value="2" {{if .Bug.Last}}{{if eq .Bug.Last.Status 2}}selected{{end}}{{end}}>Closed</option>
+					</select>
+				</label>
 
-					<label>
-						Who:
-						<select name="who">
-							{{range .Users}}
-								<option value="{{.Name}}" {{if $.Bug.Last}}{{if eq $.Bug.Last.Who .Name}}selected{{end}}{{end}}>{{.Name}}</option>
-							{{end}}
-						</select>
-					</label>
+				<label class="label-who">
+					Who:
+					<select class="select-options" name="who">
+						{{range .Users}}
+							<option value="{{.Name}}" {{if $.Bug.Last}}{{if eq $.Bug.Last.Who .Name}}selected{{end}}{{end}}>{{.Name}}</option>
+						{{end}}
+					</select>
+				</label>
 
-					<label>
-						Comment:					
-						<textarea name="comment" cols="80" rows="10"></textarea>
-					</label>
-					<input type="submit" value="Add"/>
-					<input type="hidden" name="id" value="{{.Bug.Id}}"/>
+				<label class="label-comment">
+					Comment:					
+					<textarea name="comment"></textarea>
+				</label>
+				<div class="align-center">
+					<button class="btn-submit" type="submit">Add</button>
 				</div>
-			</form>
-
-
-			<!--<form class="issue-form" action="change" method="post">
-				<div id="table">
-					<div id="row">
-						<div id="cell">
-							Issue &#35;{{.Bug.Id}}&nbsp;&nbsp;
-						</div>
-						<div id="cell">
-							<input type="text" name="subject" size="80" value="{{.Bug.Subject}}"/>
-						</div>
-					</div>
-					<div id="row">
-						<div id="cell">
-							Status:
-						</div>
-						<div id="cell">
-							<select name="status">
-								<option value="0" {{if .Bug.Last}}{{if eq .Bug.Last.Status 0}}selected{{end}}{{end}}>Open</option>
-								<option value="1" {{if .Bug.Last}}{{if eq .Bug.Last.Status 1}}selected{{end}}{{end}}>Fixed</option>
-								<option value="2" {{if .Bug.Last}}{{if eq .Bug.Last.Status 2}}selected{{end}}{{end}}>Closed</option>
-							</select>
-						</div>
-					</div>
-					<div id="row">
-						<div id="cell">
-							Who:
-						</div>
-						<div id="cell">
-							<select name="who">
-								{{range .Users}}
-									<option value="{{.Name}}" {{if $.Bug.Last}}{{if eq $.Bug.Last.Who .Name}}selected{{end}}{{end}}>{{.Name}}</option>
-								{{end}}
-							</select>
-						</div>
-					</div>
-					<div id="row">
-						<div id="cell">
-							Comment:
-						</div>
-						<div id="cell">
-							<textarea name="comment" cols="80" rows="10"></textarea>
-						</div>
-					</div>
-					<div id="row">
-						<div id="cell">
-							<input type="submit" value="Add"/>
-						</div>
-					</div>
-					<input type="hidden" name="id" value="{{.Bug.Id}}"/>
-				</div>
-			</form>-->
+				<input type="hidden" name="id" value="{{.Bug.Id}}"/>
+			</form>	
 		</div>
 	{{range .Bug.Changes}}<br/>
 	{{.When}} {{.Who}}

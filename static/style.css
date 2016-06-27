@@ -4,17 +4,22 @@ Values with @ in the comments means that the values are interconnected.
 Each section of the page will be signed, for example: Navbar, Issues table, etc.
 */
 
-/*CSS Reset*/
+/* ------------ CSS RESET ------------ */
 	* {box-sizing: border-box; margin: 0; padding: 0;}
 	button {border:none; background-color: transparent; cursor: pointer;}
 	a {text-decoration: none;}
 
-/*General settings*/
+/* ------------ GENERAL SETTINGS ------------ */
 	body {
 		background-color: #f3f3f3;
 		font-family: Verdana, Geneva, sans-serif;
+		font-size: 14px;
 		min-width: 320px;
 	}
+
+	label {display: inline-block;}
+
+/* ------------ STYLES CREATED ------------ */
 
 /*Container*/
 	.container {
@@ -25,13 +30,29 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		max-width: 900px; /* @container-height */
 	}
 
-/*Default block, this is the block holding the main informations*/
+/*Helpers*/
+	.align-center {
+		text-align: center;
+		width: 100%;
+	}
+
+/*Styles created*/
 	.default-block {
 		background-color: #fff;		
 		border: 1px solid #afd2ca; /* @default-block-border */
 		border-top-width: 4px;
+		padding: 5px 10px;
 	}
 
+	.btn-submit {
+		background-color: #378f7c;
+		border: 1px solid #afd2ca; /* @default-block-border */
+		border-radius: 3px;
+		color: #fff;
+		padding: 5px;
+	}
+
+/* ------------ STRUCTURE ------------ */
 
 /*Navbar*/
 	.navbar {
@@ -61,7 +82,6 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 
 /*Add Issue*/
 	.add-issue {
-		padding: 5px 10px;
 		text-align: center;
 		font-size: 15px;
 		margin: 0 auto;
@@ -81,14 +101,6 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		padding-left: 3px;
 		width: 80%;
 		border: 1px solid #afd2ca; /* @default-block-border */
-	}
-
-	.add-issue-form > .add-issue-submit {
-		background-color: #378f7c;
-		border: 1px solid #afd2ca; /* @default-block-border */
-		border-radius: 3px;
-		color: #fff;
-		padding: 5px;
 	}
 
 /*Issues Table*/
@@ -150,11 +162,46 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		}
 
 /*Issue form - bug.template*/
+	.issue-form > label {
+		margin-bottom: 10px;
+		width: 100%;
+	}
 
-.issue-form {
+	.select-options {
+		padding: 0px 10px;
+	}
 
-}
+	/*label-name*/
+		.issue-form > .label-name {
+			width: 100%;
+		}
 
+		.label-name > input {
+			margin-top: 5px;
+			width: 100%;
+		}
+
+	/*label-status*/
+		.issue-form > .label-status {
+			width: 45%;
+		}
+
+	/*label-who*/
+		.issue-form > .label-who {
+			width: 45%;
+		}
+
+	/*label-comment*/
+		.issue-form > .label-comment {
+			
+		}
+
+		.label-comment > textarea {
+			margin-top: 5px;
+			min-width: 100%;
+			max-width: 100%;
+			min-height: 100px;
+		}
 
 
 
