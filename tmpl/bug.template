@@ -61,11 +61,16 @@
 			{{range .Bug.Changes}}
 				<tr>
 					<td>
-						{{.When}} {{.Who}}
-						{{if eq .Status 0}}Open{{end}}
-						{{if eq .Status 1}}Fixed{{end}}
-						{{if eq .Status 2}}Closed{{end}}
-						{{.Comment}}
+						<ul class="issue-log-list">
+							<li class="issue-log-item">{{.When}}</li>
+							<li class="issue-log-item">
+								{{if eq .Status 0}}<span class="badge-open">Open</span>{{end}}
+								{{if eq .Status 1}}<span class="badge-fixed">Fixed</span>{{end}}
+								{{if eq .Status 2}}<span class="badge-closed">Closed</span>{{end}}
+							</li>
+							<li class="issue-log-item">{{.Who}}</li>
+							<li class="issue-log-item">{{.Comment}}</li>
+						</ul>
 					</td>
 				</tr>
 			{{end}}

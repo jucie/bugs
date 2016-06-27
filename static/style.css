@@ -85,7 +85,7 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		padding: 4px;
 	}
 
-/* ------------ STRUCTURE ------------ */
+/* ------------ ROOT.TEMPLATE ------------ */
 
 /*Navbar*/
 	.navbar {
@@ -167,6 +167,8 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
     	max-width: 100px;
 		}
 
+/* ------------ BUG.TEMPLATE ------------ */
+
 /*Issue form - bug.template*/
 	.issue-form > label {
 		margin-bottom: 10px;
@@ -214,7 +216,33 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 			padding: 2px 5px;
 		}
 
+/*Issue log*/
 
+	/*Ul of each log*/
+		.issue-log-list {
+			list-style: none;
+			padding: 0px 5px;
+		}
+
+	/*Each item of the Ul*/
+		.issue-log-item {
+			margin-bottom: 10px;
+		}
+
+	/*Log time*/
+		.issue-log-item:first-child {
+			font-weight: bold;
+		}
+
+	/*Log status and Log user*/
+		.issue-log-item:nth-child(2), .issue-log-item:nth-child(3) {
+			display: inline-block;
+		}
+
+	/*Log comment*/
+		.issue-log-item:last-child {
+			margin-bottom: 0;
+		}
 
 @media screen and (min-width: 768px) {
 	.navbar {
