@@ -2,31 +2,49 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Bug Catcher</title>
 	<link rel="stylesheet" type="text/css" href="static/style.css">
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" media="all" href="static/style-ie8-and-down.css"/>
+	<![endif]-->
+
 </head>
-	<body><font face="verdana">
-	<a href="/"><img src="static/ladybug.png"/></a><br/>
-{{range .Parts}}{{.Name}}
-	<form action="newBug" method="post">
-	<input type="text" name="subject" size="80"/>
-	<input type="submit" value="Add Issue"/>
-	<input type="hidden" value="{{.Id}}" name="partId"/>
-	</form><br/>
-	<div id="table">
-	{{range .Bugs}}
-		<div id="row">
-		<div id="cell">&#35;{{.Id}}</div>
-		<div id="cell">{{if .Last}}
-		{{if eq .Last.Status 0}}Open{{end}}
-		{{if eq .Last.Status 1}}Fixed{{end}}
-		{{if eq .Last.Status 2}}Closed{{end}}
-		{{end}}</div>
-		<div id="cell">{{if .Last}}{{.Last.Who}}{{end}}</div>
-		<div id="cell"><a href="bug?id={{.Id}}">{{.Subject}}</a><br/></div>
+<body>
+	<nav id="navbar" class="navbar">
+		<div class="container">
+			<a class="logo-link" href="#">
+				<img class="nav-logo" src="static/bugcatcher.png" alt="Image logo">
+			</a> 
+			<a class="title-link" href="#">Bug Catcher</a>
 		</div>
-	{{end}}
+	</nav>
+	<div class="container">
+	
+		<div class="add-issue default-block">
+			{{range .Parts}}{{.Name}}
+			<form class="add-issue-form" action="newBug" method="post">
+				<input class="add-issue-name" type="text" name="subject" placeholder="Insert here a new issue...">
+				<button class="add-issue-submit" type="submit">Add Issue</button>
+				<input type="hidden" value="{{.Id}}" name="partId">
+			</form>
+		</div>
+
+		<table class="issue-table default-block">
+			{{range .Bugs}}				
+			<tr>
+				<td>&#35;{{.Id}}</td>
+				<td>{{if .Last}}
+				{{if eq .Last.Status 0}}<span class="badge-open">Open</span>{{end}}
+				{{if eq .Last.Status 1}}<span class="badge-fixed">Fixed</span>{{end}}
+				{{if eq .Last.Status 2}}<span class="badge-closed">Closed</span>{{end}}
+				{{end}}</td>
+				<td>{{if .Last}}{{.Last.Who}}{{end}}</td>
+				<td><a href="bug?id={{.Id}}">{{.Subject}}</a><br/></td>
+			</tr>
+			{{end}}
+		</table>
+		{{end}}
 	</div>
-{{end}}
-	</font></body>
+</body>
 </html>
 
