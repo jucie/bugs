@@ -25,12 +25,12 @@
 			<form class="issue-form" action="change" method="post">
 				<label class="label-name">
 					Issue &#35;{{.Bug.Id}}&nbsp;&nbsp;						
-					<input type="text" name="subject" value="{{.Bug.Subject}}"/>
+					<input class="input-border" type="text" name="subject" value="{{.Bug.Subject}}"/>
 				</label>
 					
 				<label class="label-status">
 					Status:
-					<select class="select-options" name="status">
+					<select class="select-options input-border" name="status">
 						<option value="0" {{if .Bug.Last}}{{if eq .Bug.Last.Status 0}}selected{{end}}{{end}}>Open</option>
 						<option value="1" {{if .Bug.Last}}{{if eq .Bug.Last.Status 1}}selected{{end}}{{end}}>Fixed</option>
 						<option value="2" {{if .Bug.Last}}{{if eq .Bug.Last.Status 2}}selected{{end}}{{end}}>Closed</option>
@@ -39,7 +39,7 @@
 
 				<label class="label-who">
 					Who:
-					<select class="select-options" name="who">
+					<select class="select-options input-border" name="who">
 						{{range .Users}}
 							<option value="{{.Name}}" {{if $.Bug.Last}}{{if eq $.Bug.Last.Who .Name}}selected{{end}}{{end}}>{{.Name}}</option>
 						{{end}}
@@ -48,7 +48,7 @@
 
 				<label class="label-comment">
 					Comment:					
-					<textarea name="comment"></textarea>
+					<textarea class="input-border" name="comment"></textarea>
 				</label>
 				<div class="align-center">
 					<button class="btn-submit" type="submit">Add</button>

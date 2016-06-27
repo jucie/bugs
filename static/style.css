@@ -36,12 +36,15 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		width: 100%;
 	}
 
-/*Styles created*/
 	.default-block {
 		background-color: #fff;		
 		border: 1px solid #afd2ca; /* @default-block-border */
 		border-top-width: 4px;
 		padding: 5px 10px;
+	}
+
+	.input-border {
+		border: 1px solid #afd2ca;
 	}
 
 	.btn-submit {
@@ -100,7 +103,6 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		margin: 5px 0px;
 		padding-left: 3px;
 		width: 80%;
-		border: 1px solid #afd2ca; /* @default-block-border */
 	}
 
 /*Issues Table*/
@@ -197,10 +199,13 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		}
 
 		.label-comment > textarea {
+			font-family: inherit;
+			font-size: inherit;
 			margin-top: 5px;
 			min-width: 100%;
 			max-width: 100%;
 			min-height: 100px;
+			padding: 2px 5px;
 		}
 
 

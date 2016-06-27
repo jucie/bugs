@@ -23,7 +23,7 @@
 		<div class="add-issue default-block">
 			{{range .Parts}}{{.Name}}
 			<form class="add-issue-form" action="newBug" method="post">
-				<input class="add-issue-name" type="text" name="subject" placeholder="Insert here a new issue...">
+				<input class="add-issue-name input-border" type="text" name="subject" placeholder="Insert here a new issue...">
 				<button class="btn-submit" type="submit">Add Issue</button>
 				<input type="hidden" value="{{.Id}}" name="partId">
 			</form>
