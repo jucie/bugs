@@ -31,16 +31,16 @@
 
 		<table class="issue-table default-block default-table">
 			{{range .Bugs}}				
-			<tr>
-				<td>&#35;{{.Id}}</td>
-				<td>{{if .Last}}
-				{{if eq .Last.Status 0}}<span class="badge-open">Open</span>{{end}}
-				{{if eq .Last.Status 1}}<span class="badge-fixed">Fixed</span>{{end}}
-				{{if eq .Last.Status 2}}<span class="badge-closed">Closed</span>{{end}}
-				{{end}}</td>
-				<td>{{if .Last}}{{.Last.Who}}{{end}}</td>
-				<td><a href="bug?id={{.Id}}">{{.Subject}}</a><br/></td>
-			</tr>
+				<tr>
+					<td>&#35;{{.Id}}</td>
+					<td>{{if .Last}}
+					{{if eq .Last.Status 0}}<span class="badge-open">Open</span>{{end}}
+					{{if eq .Last.Status 1}}<span class="badge-fixed">Fixed</span>{{end}}
+					{{if eq .Last.Status 2}}<span class="badge-closed">Closed</span>{{end}}
+					{{end}}</td>
+					<td>{{if .Last}}{{.Last.Who}}{{end}}</td>
+					<td><a href="bug?id={{.Id}}">{{.Subject}}</a></td>
+				</tr>
 			{{end}}
 		</table>
 		{{end}}

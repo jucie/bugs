@@ -27,7 +27,7 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		padding: 0px 10px;
 		position: relative;
 		margin: 0 auto;
-		max-width: 900px; /* @container-height */
+		max-width: 900px; /* @container-width */
 	}
 
 /*Helpers*/
@@ -49,7 +49,7 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		border-collapse: collapse;
 		margin-left: auto;
 		margin-right: auto;
-		max-width: 900px; /* @container-height */
+		max-width: 900px; /* @container-width */
 		width: 100%;
 	}
 
@@ -72,6 +72,17 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		border-radius: 3px;
 		color: #fff;
 		padding: 5px;
+	}
+
+	.badge-open {background-color: #207de5;}
+	.badge-fixed {background-color: #6cc644;}
+	.badge-closed {background-color: #fd2a2a;}
+
+	span[class^="badge"] {
+		border-radius: 10px;
+		color: white;
+		font-weight: bold;
+		padding: 4px;
 	}
 
 /* ------------ STRUCTURE ------------ */
@@ -108,7 +119,7 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		font-size: 15px;
 		margin-left: auto;
 		margin-right: auto;
-		max-width: 900px; /* @container-height */
+		max-width: 900px; /* @container-width */
 		padding: 10px 0;
 	}
 
@@ -125,11 +136,6 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 	}
 
 /*Issues Table*/
-	.issue-table {
-		
-	}
-
-	
 
 	.issue-table a:link {color:#000;}
 	.issue-table a:visited {color:#000;}
@@ -147,17 +153,6 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 			font-weight: bold;		
 			max-width: 40px;
 		}
-
-		span[class^="badge"] {
-			border-radius: 10px;
-			color: white;
-			font-weight: bold;
-			padding: 4px;
-		}
-
-		.badge-open {background-color: #207de5;}
-		.badge-fixed {background-color: #6cc644;}
-		.badge-closed {background-color: #fd2a2a;}
 
 	/*Issue username */
 		.issue-table td:nth-child(3) {

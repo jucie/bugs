@@ -59,14 +59,15 @@
 
 		<table class="default-block default-table">
 			{{range .Bug.Changes}}
-			<tr>
-				<td>{{.When}} {{.Who}}
-				{{if eq .Status 0}}Open{{end}}
-				{{if eq .Status 1}}Fixed{{end}}
-				{{if eq .Status 2}}Closed{{end}}
-				<br/>
-			{{.Comment}}<br/></td>
-			</tr>
+				<tr>
+					<td>
+						{{.When}} {{.Who}}
+						{{if eq .Status 0}}Open{{end}}
+						{{if eq .Status 1}}Fixed{{end}}
+						{{if eq .Status 2}}Closed{{end}}
+						{{.Comment}}
+					</td>
+				</tr>
 			{{end}}
 		</table>
 
