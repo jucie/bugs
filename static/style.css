@@ -40,10 +40,29 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		background-color: #fff;		
 		border: 1px solid #afd2ca; /* @default-block-border */
 		border-top-width: 4px;
+		margin-bottom: 10px;
 		padding: 5px 10px;
 	}
 
-	.input-border {
+	.default-table {
+		font-size: 11px;
+		border-collapse: collapse;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 900px; /* @container-height */
+		width: 100%;
+	}
+
+	.default-table tr {
+		border-bottom: 1px solid #afd2ca;
+	}
+
+	.default-table td {
+		padding: 10px 4px;
+	}
+
+	.input-default {
+		line-height: 20px;
 		border: 1px solid #afd2ca;
 	}
 
@@ -87,8 +106,8 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 	.add-issue {
 		text-align: center;
 		font-size: 15px;
-		margin: 0 auto;
-		margin-bottom: 10px;
+		margin-left: auto;
+		margin-right: auto;
 		max-width: 900px; /* @container-height */
 		padding: 10px 0;
 	}
@@ -107,20 +126,10 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 
 /*Issues Table*/
 	.issue-table {
-		font-size: 11px;
-		border-collapse: collapse;
-		margin: 0 auto;
-		max-width: 900px; /* @container-height */
-		width: 100%;
+		
 	}
 
-	.issue-table tr {
-		border-bottom: 1px solid #afd2ca;
-	}
-
-	.issue-table td {
-		padding: 10px 4px;
-	}
+	
 
 	.issue-table a:link {color:#000;}
 	.issue-table a:visited {color:#000;}
@@ -179,7 +188,9 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		}
 
 		.label-name > input {
+			line-height: 20px;
 			margin-top: 5px;
+			padding-left: 3px;
 			width: 100%;
 		}
 
@@ -225,6 +236,10 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
   .title-link {
   	display: inline;
   }
+
+  .label-name > input {
+		width: 89%;
+	}
 }
  
 @media screen and (min-width: 992px) {

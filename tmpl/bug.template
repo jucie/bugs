@@ -10,14 +10,14 @@
 
 </head>
 <body>
-	<nav id="navbar" class="navbar">
+	<div id="navbar" class="navbar">
 		<div class="container">
-			<a class="logo-link" href="#">
+			<a class="logo-link" href="root.template">
 				<img class="nav-logo" src="static/bugcatcher.png" alt="Image logo">
 			</a>
-			<a class="title-link" href="#">Bug Catcher</a>
+			<a class="title-link" href="root.template">Bug Catcher</a>
 		</div>
-	</nav>
+	</div>
 
 	<div class="container">
 
@@ -25,12 +25,12 @@
 			<form class="issue-form" action="change" method="post">
 				<label class="label-name">
 					Issue &#35;{{.Bug.Id}}&nbsp;&nbsp;						
-					<input class="input-border" type="text" name="subject" value="{{.Bug.Subject}}"/>
+					<input class="input-default" type="text" name="subject" value="{{.Bug.Subject}}"/>
 				</label>
 					
 				<label class="label-status">
 					Status:
-					<select class="select-options input-border" name="status">
+					<select class="select-options input-default" name="status">
 						<option value="0" {{if .Bug.Last}}{{if eq .Bug.Last.Status 0}}selected{{end}}{{end}}>Open</option>
 						<option value="1" {{if .Bug.Last}}{{if eq .Bug.Last.Status 1}}selected{{end}}{{end}}>Fixed</option>
 						<option value="2" {{if .Bug.Last}}{{if eq .Bug.Last.Status 2}}selected{{end}}{{end}}>Closed</option>
@@ -39,7 +39,7 @@
 
 				<label class="label-who">
 					Who:
-					<select class="select-options input-border" name="who">
+					<select class="select-options input-default" name="who">
 						{{range .Users}}
 							<option value="{{.Name}}" {{if $.Bug.Last}}{{if eq $.Bug.Last.Who .Name}}selected{{end}}{{end}}>{{.Name}}</option>
 						{{end}}
@@ -48,7 +48,7 @@
 
 				<label class="label-comment">
 					Comment:					
-					<textarea class="input-border" name="comment"></textarea>
+					<textarea class="input-default" name="comment"></textarea>
 				</label>
 				<div class="align-center">
 					<button class="btn-submit" type="submit">Add</button>
@@ -56,14 +56,20 @@
 				<input type="hidden" name="id" value="{{.Bug.Id}}"/>
 			</form>	
 		</div>
-	{{range .Bug.Changes}}<br/>
-	{{.When}} {{.Who}}
-		{{if eq .Status 0}}Open{{end}}
-		{{if eq .Status 1}}Fixed{{end}}
-		{{if eq .Status 2}}Closed{{end}}
-		<br/>
-	{{.Comment}}<br/>
-	{{end}}
+
+		<table class="default-block default-table">
+			{{range .Bug.Changes}}
+			<tr>
+				<td>{{.When}} {{.Who}}
+				{{if eq .Status 0}}Open{{end}}
+				{{if eq .Status 1}}Fixed{{end}}
+				{{if eq .Status 2}}Closed{{end}}
+				<br/>
+			{{.Comment}}<br/></td>
+			</tr>
+			{{end}}
+		</table>
+
 	</div>
 </body>
 </html>

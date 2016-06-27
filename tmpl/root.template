@@ -10,26 +10,26 @@
 
 </head>
 <body>
-	<nav id="navbar" class="navbar">
+	<div id="navbar" class="navbar">
 		<div class="container">
-			<a class="logo-link" href="#">
+			<a class="logo-link" href="root.template">
 				<img class="nav-logo" src="static/bugcatcher.png" alt="Image logo">
 			</a> 
-			<a class="title-link" href="#">Bug Catcher</a>
+			<a class="title-link" href="root.template">Bug Catcher</a>
 		</div>
-	</nav>
+	</div>
 	<div class="container">
 	
 		<div class="add-issue default-block">
 			{{range .Parts}}{{.Name}}
 			<form class="add-issue-form" action="newBug" method="post">
-				<input class="add-issue-name input-border" type="text" name="subject" placeholder="Insert here a new issue...">
+				<input class="add-issue-name input-default" type="text" name="subject" placeholder="Insert here a new issue...">
 				<button class="btn-submit" type="submit">Add Issue</button>
 				<input type="hidden" value="{{.Id}}" name="partId">
 			</form>
 		</div>
 
-		<table class="issue-table default-block">
+		<table class="issue-table default-block default-table">
 			{{range .Bugs}}				
 			<tr>
 				<td>&#35;{{.Id}}</td>
