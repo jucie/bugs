@@ -57,7 +57,7 @@
 			</form>	
 		</div>
 
-		<table class="default-block default-table">
+		<table class="table-log default-block default-table">
 			{{range .Bug.Changes}}
 				<tr>
 					<td>
