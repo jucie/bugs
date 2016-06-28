@@ -4,17 +4,22 @@ Values with @ in the comments means that the values are interconnected.
 Each section of the page will be signed, for example: Navbar, Issues table, etc.
 */
 
-/*CSS Reset*/
+/* ------------ CSS RESET ------------ */
 	* {box-sizing: border-box; margin: 0; padding: 0;}
 	button {border:none; background-color: transparent; cursor: pointer;}
 	a {text-decoration: none;}
 
-/*General settings*/
+/* ------------ GENERAL SETTINGS ------------ */
 	body {
 		background-color: #f3f3f3;
 		font-family: Verdana, Geneva, sans-serif;
+		font-size: 14px;
 		min-width: 320px;
 	}
+
+	label {display: inline-block;}
+
+/* ------------ STYLES CREATED ------------ */
 
 /*Container*/
 	.container {
@@ -22,16 +27,65 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		padding: 0px 10px;
 		position: relative;
 		margin: 0 auto;
-		max-width: 900px; /* @container-height */
+		max-width: 900px; /* @container-width */
 	}
 
-/*Default block, this is the block holding the main informations*/
+/*Helpers*/
+	.align-center {
+		text-align: center;
+		width: 100%;
+	}
+
 	.default-block {
 		background-color: #fff;		
 		border: 1px solid #afd2ca; /* @default-block-border */
 		border-top-width: 4px;
+		margin-bottom: 10px;
+		padding: 5px 10px;
 	}
 
+	.default-table {
+		font-size: 11px;
+		border-collapse: collapse;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 900px; /* @container-width */
+		width: 100%;
+	}
+
+	.default-table tr {
+		border-bottom: 1px solid #afd2ca;
+	}
+
+	.default-table td {
+		padding: 10px 4px;
+	}
+
+	.input-default {
+		line-height: 20px;
+		border: 1px solid #afd2ca;
+	}
+
+	.btn-submit {
+		background-color: #378f7c;
+		border: 1px solid #afd2ca; /* @default-block-border */
+		border-radius: 3px;
+		color: #fff;
+		padding: 5px;
+	}
+
+	.badge-open {background-color: #207de5;}
+	.badge-fixed {background-color: #6cc644;}
+	.badge-closed {background-color: #fd2a2a;}
+
+	span[class^="badge"] {
+		border-radius: 10px;
+		color: white;
+		font-weight: bold;
+		padding: 4px;
+	}
+
+/* ------------ ROOT.TEMPLATE ------------ */
 
 /*Navbar*/
 	.navbar {
@@ -61,12 +115,11 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 
 /*Add Issue*/
 	.add-issue {
-		padding: 5px 10px;
 		text-align: center;
 		font-size: 15px;
-		margin: 0 auto;
-		margin-bottom: 10px;
-		max-width: 900px; /* @container-height */
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 900px; /* @container-width */
 		padding: 10px 0;
 	}
 
@@ -80,33 +133,9 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 		margin: 5px 0px;
 		padding-left: 3px;
 		width: 80%;
-		border: 1px solid #afd2ca; /* @default-block-border */
-	}
-
-	.add-issue-form > .add-issue-submit {
-		background-color: #378f7c;
-		border: 1px solid #afd2ca; /* @default-block-border */
-		border-radius: 3px;
-		color: #fff;
-		padding: 5px;
 	}
 
 /*Issues Table*/
-	.issue-table {
-		font-size: 11px;
-		border-collapse: collapse;
-		margin: 0 auto;
-		max-width: 900px; /* @container-height */
-		width: 100%;
-	}
-
-	.issue-table tr {
-		border-bottom: 1px solid #afd2ca;
-	}
-
-	.issue-table td {
-		padding: 10px 4px;
-	}
 
 	.issue-table a:link {color:#000;}
 	.issue-table a:visited {color:#000;}
@@ -125,17 +154,6 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
 			max-width: 40px;
 		}
 
-		span[class^="badge"] {
-			border-radius: 10px;
-			color: white;
-			font-weight: bold;
-			padding: 4px;
-		}
-
-		.badge-open {background-color: #207de5;}
-		.badge-fixed {background-color: #6cc644;}
-		.badge-closed {background-color: #fd2a2a;}
-
 	/*Issue username */
 		.issue-table td:nth-child(3) {
 			text-align: center;
@@ -149,14 +167,82 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
     	max-width: 100px;
 		}
 
+/* ------------ BUG.TEMPLATE ------------ */
+
 /*Issue form - bug.template*/
+	.issue-form > label {
+		margin-bottom: 10px;
+		width: 100%;
+	}
 
-.issue-form {
+	.select-options {
+		padding: 0px 10px;
+	}
 
-}
+	/*label-name*/
+		.issue-form > .label-name {
+			width: 100%;
+		}
 
+		.label-name > input {
+			line-height: 20px;
+			margin-top: 5px;
+			padding-left: 3px;
+			width: 100%;
+		}
 
+	/*label-status*/
+		.issue-form > .label-status {
+			width: 45%;
+		}
 
+	/*label-who*/
+		.issue-form > .label-who {
+			width: 45%;
+		}
+
+	/*label-comment*/
+		.issue-form > .label-comment {
+			
+		}
+
+		.label-comment > textarea {
+			font-family: inherit;
+			font-size: inherit;
+			margin-top: 5px;
+			min-width: 100%;
+			max-width: 100%;
+			min-height: 100px;
+			padding: 2px 5px;
+		}
+
+/*Issue log*/
+
+	/*Ul of each log*/
+		.issue-log-list {
+			list-style: none;
+			padding: 0px 5px;
+		}
+
+	/*Each item of the Ul*/
+		.issue-log-item {
+			margin-bottom: 10px;
+		}
+
+	/*Log time*/
+		.issue-log-item:first-child {
+			font-weight: bold;
+		}
+
+	/*Log status and Log user*/
+		.issue-log-item:nth-child(2), .issue-log-item:nth-child(3) {
+			display: inline-block;
+		}
+
+	/*Log comment*/
+		.issue-log-item:last-child {
+			margin-bottom: 0;
+		}
 
 @media screen and (min-width: 768px) {
 	.navbar {
@@ -173,10 +259,26 @@ Each section of the page will be signed, for example: Navbar, Issues table, etc.
   .title-link {
   	display: inline;
   }
+
+  .label-name > input {
+		width: 89%;
+	}
+
+	/* FONT RESIZE */
+		.default-block {
+			font-size: 13px;
+		}
+
 }
  
 @media screen and (min-width: 992px) {
+	/* FONT RESIZE */
+		.default-block {
+			font-size: 15px;
+		}
+
 }
  
 @media screen and (min-width: 1200px) {
+	
 }

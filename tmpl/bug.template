@@ -10,112 +10,72 @@
 
 </head>
 <body>
-	<nav id="navbar" class="navbar">
+	<div id="navbar" class="navbar">
 		<div class="container">
-			<a class="logo-link" href="#">
+			<a class="logo-link" href="root.template">
 				<img class="nav-logo" src="static/bugcatcher.png" alt="Image logo">
 			</a>
-			<a class="title-link" href="#">Bug Catcher</a>
+			<a class="title-link" href="root.template">Bug Catcher</a>
 		</div>
-	</nav>
+	</div>
 
 	<div class="container">
 
 		<div class="default-block">
 			<form class="issue-form" action="change" method="post">
-				<div id="table">
-					<label>
-						Issue &#35;{{.Bug.Id}}&nbsp;&nbsp;						
-						<input type="text" name="subject" size="80" value="{{.Bug.Subject}}"/>
-					</label>
-						
-					<label>
-						Status:
-						<select name="status">
-							<option value="0" {{if .Bug.Last}}{{if eq .Bug.Last.Status 0}}selected{{end}}{{end}}>Open</option>
-							<option value="1" {{if .Bug.Last}}{{if eq .Bug.Last.Status 1}}selected{{end}}{{end}}>Fixed</option>
-							<option value="2" {{if .Bug.Last}}{{if eq .Bug.Last.Status 2}}selected{{end}}{{end}}>Closed</option>
-						</select>
-					</label>
+				<label class="label-name">
+					Issue &#35;{{.Bug.Id}}&nbsp;&nbsp;						
+					<input class="input-default" type="text" name="subject" value="{{.Bug.Subject}}"/>
+				</label>
+					
+				<label class="label-status">
+					Status:
+					<select class="select-options input-default" name="status">
+						<option value="0" {{if .Bug.Last}}{{if eq .Bug.Last.Status 0}}selected{{end}}{{end}}>Open</option>
+						<option value="1" {{if .Bug.Last}}{{if eq .Bug.Last.Status 1}}selected{{end}}{{end}}>Fixed</option>
+						<option value="2" {{if .Bug.Last}}{{if eq .Bug.Last.Status 2}}selected{{end}}{{end}}>Closed</option>
+					</select>
+				</label>
 
-					<label>
-						Who:
-						<select name="who">
-							{{range .Users}}
-								<option value="{{.Name}}" {{if $.Bug.Last}}{{if eq $.Bug.Last.Who .Name}}selected{{end}}{{end}}>{{.Name}}</option>
-							{{end}}
-						</select>
-					</label>
+				<label class="label-who">
+					Who:
+					<select class="select-options input-default" name="who">
+						{{range .Users}}
+							<option value="{{.Name}}" {{if $.Bug.Last}}{{if eq $.Bug.Last.Who .Name}}selected{{end}}{{end}}>{{.Name}}</option>
+						{{end}}
+					</select>
+				</label>
 
-					<label>
-						Comment:					
-						<textarea name="comment" cols="80" rows="10"></textarea>
-					</label>
-					<input type="submit" value="Add"/>
-					<input type="hidden" name="id" value="{{.Bug.Id}}"/>
+				<label class="label-comment">
+					Comment:					
+					<textarea class="input-default" name="comment"></textarea>
+				</label>
+				<div class="align-center">
+					<button class="btn-submit" type="submit">Add</button>
 				</div>
-			</form>
-
-
-			<!--<form class="issue-form" action="change" method="post">
-				<div id="table">
-					<div id="row">
-						<div id="cell">
-							Issue &#35;{{.Bug.Id}}&nbsp;&nbsp;
-						</div>
-						<div id="cell">
-							<input type="text" name="subject" size="80" value="{{.Bug.Subject}}"/>
-						</div>
-					</div>
-					<div id="row">
-						<div id="cell">
-							Status:
-						</div>
-						<div id="cell">
-							<select name="status">
-								<option value="0" {{if .Bug.Last}}{{if eq .Bug.Last.Status 0}}selected{{end}}{{end}}>Open</option>
-								<option value="1" {{if .Bug.Last}}{{if eq .Bug.Last.Status 1}}selected{{end}}{{end}}>Fixed</option>
-								<option value="2" {{if .Bug.Last}}{{if eq .Bug.Last.Status 2}}selected{{end}}{{end}}>Closed</option>
-							</select>
-						</div>
-					</div>
-					<div id="row">
-						<div id="cell">
-							Who:
-						</div>
-						<div id="cell">
-							<select name="who">
-								{{range .Users}}
-									<option value="{{.Name}}" {{if $.Bug.Last}}{{if eq $.Bug.Last.Who .Name}}selected{{end}}{{end}}>{{.Name}}</option>
-								{{end}}
-							</select>
-						</div>
-					</div>
-					<div id="row">
-						<div id="cell">
-							Comment:
-						</div>
-						<div id="cell">
-							<textarea name="comment" cols="80" rows="10"></textarea>
-						</div>
-					</div>
-					<div id="row">
-						<div id="cell">
-							<input type="submit" value="Add"/>
-						</div>
-					</div>
-					<input type="hidden" name="id" value="{{.Bug.Id}}"/>
-				</div>
-			</form>-->
+				<input type="hidden" name="id" value="{{.Bug.Id}}"/>
+			</form>	
 		</div>
-	{{range .Bug.Changes}}<br/>
-	{{.When}} {{.Who}}
-		{{if eq .Status 0}}Open{{end}}
-		{{if eq .Status 1}}Fixed{{end}}
-		{{if eq .Status 2}}Closed{{end}}
-		<br/>
-	{{.Comment}}<br/>
-	{{end}}
+
+		<table class="table-log default-block default-table">
+			{{range .Bug.Changes}}
+				<tr>
+					<td>
+						<ul class="issue-log-list">
+							<li class="issue-log-item">{{.When}}</li>
+							<li class="issue-log-item">
+								{{if eq .Status 0}}<span class="badge-open">Open</span>{{end}}
+								{{if eq .Status 1}}<span class="badge-fixed">Fixed</span>{{end}}
+								{{if eq .Status 2}}<span class="badge-closed">Closed</span>{{end}}
+							</li>
+							<li class="issue-log-item">{{.Who}}</li>
+							<li class="issue-log-item">{{.Comment}}</li>
+						</ul>
+					</td>
+				</tr>
+			{{end}}
+		</table>
+
 	</div>
 </body>
 </html>

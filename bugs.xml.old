@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <db>
-	<nextId>16</nextId>
+	<nextId>17</nextId>
 	<user>
 		<name>User 1</name>
 		<address>user1@nthn.com</address>
@@ -211,6 +211,16 @@
 			<subject>asdfasfasdf</subject>
 			<change>
 				<when>2016-06-20T18:08:09.3094-03:00</when>
+				<who>User 1</who>
+				<status>0</status>
+				<comment></comment>
+			</change>
+		</bug>
+		<bug>
+			<id>16</id>
+			<subject>dgasgfhsfhsh</subject>
+			<change>
+				<when>2016-06-20T18:08:20.8434-03:00</when>
 				<who>User 1</who>
 				<status>0</status>
 				<comment></comment>
